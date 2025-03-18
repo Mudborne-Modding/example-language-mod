@@ -24,16 +24,16 @@ return {
     end
 
     -- next we'll add a new settings button to the settings menu
-    -- see 'cl_controller' for how the game does this normally
+    -- see 'game/class/cl_controller:181' for how the game does this normally
     -- we're going to use the last language button (simplified chinese) to set a position
     local chinese = game.g.controller.props.settings['language_cn']
     local new_button = game.class.ui_language:new(chinese.ox + 18, chinese.oy, game.g.controller.props.settings, 'rb')
     print('Making button', new_button)
 
     -- at this point we have a button, but it's default function will crash because the game won't find a 'rb' column
-    -- in the main game.g.locale_csv table
+    -- in the main 'game.g.locale_csv' global table
     -- so we're going to overwrite the click script of the new button
-    -- see 'ui_language' for the class and 'md_ui' for the 'setLanguage' the game uses normally
+    -- see 'game/ui/ui_language' for the class and 'game/modules/md_ui:2756' for the 'setLanguage' function the game uses normally
     new_button.scripts.click = function()
       print('Setting custom language!')
       game.g.language = 'rb'
