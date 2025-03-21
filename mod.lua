@@ -60,7 +60,7 @@ return {
     -- however the button is blank, we need a new sprite for it!
     -- first we'll have to load an image containing our new sprite
     -- we build a special path using 'mod_id' to our mod's folder on disc
-    local spritesheet = tn.class.texture:new('my_spritesheet', 'mods/' .. mod_id .. '/spritesheet.png')
+    local spritesheet = tn.class.texture:new('my_spritesheet', mod_id .. '/spritesheet.png')
 
     -- then we need to create the 'sprite' for our button
     -- if you look at the game's spritesheet (open .asesprite file, search slices for 'sp_button_language_en')
